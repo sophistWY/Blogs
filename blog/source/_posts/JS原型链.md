@@ -55,6 +55,12 @@ var a = new M('o2')
 a.__proto__ === M.prototype // instanceof 原理就是判断这个等式是否成立
 ```
 
+
+
+### 5、原理图：
+
+![你想输入的替代文字](JS原型链/1.jpeg)
+
 ### Tips
 
 1.原型链详解 简书: [链接](https://www.jianshu.com/p/dee9f8b14771)  

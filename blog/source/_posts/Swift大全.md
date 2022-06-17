@@ -735,3 +735,9 @@ categories:
 - [SwiftGuide](https://github.com/ipader/SwiftGuide) 非常赞 这份指南汇集了Swift语言主流学习资源，并以开发者的视角整理编排。[http://dev.swiftguide.cn](http://dev.swiftguide.cn/)
 - [the-swift-programming-language-in-chinese](https://github.com/numbbbbb/the-swift-programming-language-in-chinese) 非常赞 中文版 Apple 官方 Swift 教程《The Swift Programming Language》
 - [iOS-Swift-Demos](https://github.com/Lax/iOS-Swift-Demos) 精心收集并分类整理的Swift开发学习资源，包括Apple官方提供的示例代码和文档，以及github上的项目和国内外开发者的技术博客。欢迎提交pull-request一起维护。[iOS Swift Demos from Apple] <http://blog.liulantao.com/SwiftBeginnersGuide/>
+
+
+
+#### 框架图
+
+![Swift开源项目精选](Swift大全/OpenSourceforSwift-Classification.pdf)

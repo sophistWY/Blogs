@@ -105,3 +105,41 @@ deploy:
   model: wanko
   bottom: -30
   mobileShow: false
+
+pwa:
+  manifest:
+    path: /manifest.json
+    body:
+      "name": "sophistwy"
+      "short_name": "sophist"
+      "theme_color": "rgba(203,7,83,0.86)"
+      "background_color": "#FAFAFA"
+      "display": "standalone"
+      "Scope": "/"
+      "start_url": "/"
+      icons:
+        - src: /source/images/icons/icon-512x512.png
+          sizes: 144x144
+          type: image/png
+        - src: /source/images/icons/icon-512x512.png
+          sizes: 128x128
+          type: image/png
+        - src: /source/images/icons/icon-512x512.png
+          sizes: 96x96
+          type: image/png
+  serviceWorker:
+    path: /sw.js
+    preload:
+      urls:
+        - /
+      posts: 5
+    opts:
+      networkTimeoutSeconds: 5
+    routes:
+      - pattern: !!js/regexp /hm.baidu.com/
+        strategy: networkOnly
+      - pattern: !!js/regexp /.*\.(js|css|jpg|jpeg|png|gif)$/
+        strategy: cacheFirst
+      - pattern: !!js/regexp /\//
+        strategy: networkFirst
+  priority: 5

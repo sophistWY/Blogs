@@ -9,7 +9,6 @@ if (workbox) {
 
     workbox.routing.registerRoute(new RegExp('.*.html'), workbox.strategies.networkFirst());
 
-    workbox.routing.registerRoute(new RegExp('.*.(?:js|css)'), workbox.strategies.staleWhileRevalidate());
+    workbox.routing.registerRoute(new RegExp('.*.(?:js|css|jpg|png|gif)'), workbox.strategies.staleWhileRevalidate());
 
-    workbox.routing.registerRoute(new RegExp('https://sophistwy.com/'), workbox.strategies.cacheFirst());
 }

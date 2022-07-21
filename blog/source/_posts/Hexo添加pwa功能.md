@@ -39,7 +39,7 @@ npm install hexo-pwa --save
 
 ####  三.添加manifest.json和sw.js放在根目录
 
-###### 1.[manifest.json](HEXO添加PWA功能/manifest.json) 
+###### 1.[manifest.json](Hexo添加pwa功能/manifest.json) 
 
 ```json
 {
@@ -72,7 +72,7 @@ npm install hexo-pwa --save
 
 ```
 
-##### 2. [sw.js](HEXO添加PWA功能/sw.js) 
+##### 2. [sw.js](Hexo添加pwa功能/sw.js) 
 
 ```javascript
 importScripts('https://g.alicdn.com/kg/workbox/3.3.0/workbox-sw.js');

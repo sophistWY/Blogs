@@ -11,7 +11,7 @@ categories:
 
 <!--more-->
 
-###一.设计模式
+### 一.设计模式
 
 ##### 面向对象特性:
 
@@ -46,7 +46,7 @@ categories:
 
 ![设计模式](iOS知识整理/1.png)
 
-####iOS常用设计模式:
+#### iOS常用设计模式:
 
 ***1.单例***
 
@@ -104,7 +104,7 @@ categories:
 
 
 
-###二.数据结构
+### 二.数据结构
 
 ![数据逻辑结构](iOS知识整理/6.png)
 
@@ -134,7 +134,7 @@ categories:
 
 
 
-###三.算法
+### 三.算法
 
 
 
@@ -146,9 +146,9 @@ categories:
 
 
 
-###四.应用的生命周期
+### 四.应用的生命周期
 
-####**1.main()之前经历什么:**
+#### **1.main()之前经历什么:**
 
 > 1.动态库链接库 dylib
 >
@@ -158,7 +158,7 @@ categories:
 
 ![main函数启动之前](iOS知识整理/9.png)
 
-####***2.main()之后:***
+#### ***2.main()之后:***
 
 > 1.执行AppDelegate的代理方法，主要是didFinishLaunchingWithOptions
 >
@@ -168,7 +168,7 @@ categories:
 
 
 
-####***3.启动优化思路:***
+#### ***3.启动优化思路:***
 
 **能延迟初始化的尽量延迟初始化，不能延迟初始化的尽量放到后台初始化。**
 
@@ -190,22 +190,22 @@ categories:
 
 
 
-###五. OC语言设计原理
+### 五. OC语言设计原理
 
-####**1. synthesize , dynamic**
+#### **1. synthesize , dynamic**
 
 > `@synthesize`的语义是如果你没有手动实现 `setter` 方法和 `getter` 方法，那么编译器会自动为你加上这两个方法。
 >
 > `@dynamic`告诉编译器：属性的 `setter` 与 `getter` 方法由用户自己实现，不自动生成。（当然对于 `readonly` 的属性只需提供 `getter` 即可）。编译时没问题，运行时才执行相应的方法，这就是所谓的动态绑定。
 
-####2.+(void)load和+(void)initialize
+#### 2.+(void)load和+(void)initialize
 
 >- 当类被引用进项目的时候就会执行***load***函数(在main函数开始执行之前）,与这个类是否被用到无关,每个类的load函数只会自动调用一次
 >- ***initialize***在类或者其子类的第一个方法被调用前调用
 
 
 
-####3.各种关键字
+#### 3.各种关键字
 
 ![](iOS知识整理/12.png)
 
@@ -223,7 +223,7 @@ categories:
 
 
 
-#### 4.ARC和MRC,AutoRelease
+#### 4. ARC和MRC,AutoRelease
 
 > ***ARC***: **Automatic Reference Counting 自动引用,完全消除了手动管理内存的烦琐，编译器会自动在适当的地方插入适当的retain、release、autorelease语句**
 >
@@ -245,6 +245,8 @@ categories:
 >   - `depth` ：表示页面深度，从0开始，往后递增1。
 >   - `hiwat` ：即`high water mark`，表示最大入栈数量标记
 
+
+
 **Runloop和Autorelease Pool联系:**
 
 > **在没有手加Autorelease Pool的情况下，Autorelease对象是在当前的runloop迭代结束时释放的**
@@ -257,7 +259,7 @@ categories:
 
 #### 5. Category和Extension
 
-#####Category :
+##### Category :
 
 > ```objective-c
 > typedef struct category_t {
@@ -287,7 +289,7 @@ categories:
 >
 > ***category是在运行时添加到类中,因为类的内存已经确定所以无法添加实例变量,但是可以添加@property生成setter,getter (实质还是方法). 注:`关联对象` 以哈希表的格式，存储在一个全局的单例中。***
 
-#####Extension :
+##### Extension :
 
 >  类扩展与分类相比只少了分类的名称，所以称之为“匿名分类” .
 >
@@ -295,7 +297,7 @@ categories:
 
 
 
-####6.@property和实例变量
+#### 6.@property和实例变量
 
 > - @property是是声明属性的语法
 > - @property用在声明文件中告诉编译器声明成员变量的的访问器(getter/setter)方法
@@ -303,11 +305,9 @@ categories:
 
 
 
+### 六. Swift语言设计原理
 
-
-###六. Swift语言设计原理
-
-####***1.[swift中高阶函数map、flatMap、filter、reduce](https://www.cnblogs.com/muzijie/p/6542650.html)***
+#### ***1.[swift中高阶函数map、flatMap、filter、reduce](https://www.cnblogs.com/muzijie/p/6542650.html)***
 
 >  map：可以对数组中的每一个元素做一次处理.
 >
@@ -319,7 +319,7 @@ categories:
 
 
 
-####***2.结构体和类对比***
+#### ***2.结构体和类对比***
 
 > Swift 中结构体和类有很多共同点。两者都可以：
 >
@@ -341,7 +341,7 @@ categories:
 
 
 
-####***3.值类型有哪些***
+#### ***3.值类型有哪些***
 
 > 结构体,枚举
 >
@@ -349,7 +349,7 @@ categories:
 
 
 
-####***4.copy on write***
+#### ***4.copy on write***
 
 > Swift 中的值类型,并不会在一开始赋值的时候就开辟新的内存空间,只有在需要改变这个值的时候才去开辟新的内存空间,以达到优化内存的目的.
 >
@@ -357,7 +357,7 @@ categories:
 
 
 
-####***5.optiinal原理***
+#### ***5.optiinal原理***
 
 > ```swift
 > enum Optional<T> {
@@ -368,14 +368,14 @@ categories:
 
 
 
-####***6.Swift中如何使用runtime***
+#### ***6.Swift中如何使用runtime***
 
 Swift代码中已经没有了Objective-C的运行时消息机制, 在代码编译时即确定了其实际调用的方法. 所以纯粹的Swift类和对象没有办法使用runtime, 更不存在method swizzling. 
 为了兼容Objective-C, 凡是继承NSObject的类都会保留其动态性, 依然遵循Objective-C的运行时消息机制, 因此可以通过runtime获取其属性和方法, 实现method swizzling.
 
 
 
-####***7.闭包***
+#### ***7.闭包***
 
 为了优化，如果一个值不会被闭包改变，或者在闭包创建后不会改变，Swift 可能会改为捕获并保存一份对值的拷贝。
 
@@ -383,7 +383,7 @@ Swift 也会负责被捕获变量的所有内存管理工作，包括释放不�
 
 
 
-####***8.作用域修饰符***
+#### ***8.作用域修饰符***
 
 
 
@@ -397,9 +397,9 @@ Swift 也会负责被捕获变量的所有内存管理工作，包括释放不�
 
 
 
-###七.iOS各种机制和原理
+### 七.iOS各种机制和原理
 
-####***1.Runloop***
+#### ***1.Runloop***
 
 ![Runloop原理图](iOS知识整理/7.png)
 
@@ -410,7 +410,7 @@ Swift 也会负责被捕获变量的所有内存管理工作，包括释放不�
 
 
 
-####***2.Runtime***
+#### ***2.Runtime***
 
 
 
@@ -428,7 +428,7 @@ Swift 也会负责被捕获变量的所有内存管理工作，包括释放不�
 
 
 
-####***3.dsym符号表***
+#### ***3.dsym符号表***
 
 ```xml
 <起始地址> <结束地址> <函数> [<文件名:行号>]
@@ -436,7 +436,7 @@ Swift 也会负责被捕获变量的所有内存管理工作，包括释放不�
 
 
 
-####***4.NULL***
+#### ***4.NULL***
 
 > 标识                  值                          含义
 > NULL         (void *)0            C指针的字面零值
@@ -446,7 +446,7 @@ Swift 也会负责被捕获变量的所有内存管理工作，包括释放不�
 
 
 
-####***5.静态库和动态库***
+#### ***5.静态库和动态库***
 
 - 动态库和静态库介绍
 
@@ -468,7 +468,7 @@ Swift 也会负责被捕获变量的所有内存管理工作，包括释放不�
 
 
 
-####***6.KVC 、KVO***
+#### ***6.KVC 、KVO***
 
 ***kvc:使用字符串直接访问对象的属性，或者给对象属性赋值***
 
@@ -512,7 +512,7 @@ Swift 也会负责被捕获变量的所有内存管理工作，包括释放不�
 
 
 
-####***7.Notification***
+#### ***7.Notification***
 
 > **`NSNotificationCenter`内部保存了两张(链)表：一张用户保存添加观察者时传入了NotificationName的情况，一种用户保存添加观察者时没有传入NoficationName的情况**
 
@@ -797,7 +797,7 @@ queue.addOperations([operation3, operation2, operation1], waitUntilFinished: fal
 
 
 
-####9.锁
+#### 9.锁
 
 >我们在使用多线程的时候多个线程可能会访问同一块资源，这样就很容易引发数据错乱和数据安全等问题，这时候就需要我们保证每次只有一个线程访问这一块资源，**锁** 应运而生。
 >
@@ -833,8 +833,6 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     NSLog(@"线程2 解锁成功");
 });
 ```
-
-
 
 
 
@@ -1023,7 +1021,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
 
 
-####10.Block和闭包
+#### 10.Block和闭包
 
 ![](iOS知识整理/14.png)
 
@@ -1041,7 +1039,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
 
 
-####11.响应者链
+#### 11.响应者链
 
 **3.1.事件的产生**
 
@@ -1084,7 +1082,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
 
 
-###八.网络通信原理
+### 八.网络通信原理
 
 
 
@@ -1224,7 +1222,7 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
 
 
-#####6.http和websocket的长连接区别
+##### 6.http和websocket的长连接区别
 
 > HTTP1.1通过使用Connection:keep-alive进行长连接，HTTP 1.1默认进行持久连接。在一次 TCP 连接中可以完成多个 HTTP 请求，但是对每个请求仍然要单独发 header，Keep-Alive不会永久保持连接，它有一个保持时间，可以在不同的服务器软件（如Apache）中设定这个时间。这种长连接是一种“伪链接”
 >
@@ -1305,7 +1303,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 
 
 
-###九.iOS本地持久化
+### 九.iOS本地持久化
 
 >- NSUserDefaults
 >
@@ -1380,9 +1378,9 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 
 
 
-###十.hybrid app 开发原理 , flutter原理
+### 十.hybrid app 开发原理 , flutter原理
 
-####ReactNative 和 weex 对比
+#### ReactNative 和 weex 对比
 
 > **JS引擎：**
 >
@@ -1398,7 +1396,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 
 
 
-####flutter
+#### flutter
 
 > **前言: ** 比如使用 WebView 跨平台方式，优点确实非常明显。基于 WebView 的框架集成了当下 Web 开发的诸多优势：丰富的控件库、动态化、良好的技术社区、测试自动化等等。但是缺点也同样明显：渲染效率和 JavaScript 的执行能力都比较差，使页面的加载速度和用户体验都不尽如人意。
 >
@@ -1437,7 +1435,8 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 
 ### 十一.性能优化
 
-####1.卡顿检测以及原理
+#### 1.卡顿检测以及原理
+
 > **runloop卡顿检测 : **平时所说的“卡顿”主要是因为在主线程执行了比较耗时的操作
 > 除了用xcode的Time profiler (程序耗时检测), Core Animation(检测刷新帧率)工具外,代码层面也可以检测.
 > 可以添加Observer到主线程RunLoop中，通过监听RunLoop状态切换的耗时，以达到监控卡顿的目的
@@ -1477,13 +1476,10 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 >
 >
 >
->
->
->
 
 
 
-####二: 性能优化,卡顿产生原理以及优化
+#### 二: 性能优化,卡顿产生原理以及优化
 
 > ##### 2.1 CPU和GPU卡顿原因
 >
@@ -1601,7 +1597,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 
 
 
-####三: app启动速度优化
+#### 三: app启动速度优化
 
 > ##### 3.1 启动流程
 >
@@ -1615,57 +1611,55 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 > DYLD_PRINT_STATISTICS设置为1
 > 如果需要更详细的信息，那就将DYLD_PRINT_STATISTICS_DETAILS设置为1
 >
+>![](iOS知识整理/17.png)
 >
->
-> ![img](https:////upload-images.jianshu.io/upload_images/2510972-25ef2fc8e47d09ad.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200)
->
-> 启动.png
+> 
 >
 > dyld（dynamic link editor），Apple的动态链接器，可以用来装载Mach-O文件（可执行文件、动态库等）
 >
 > 启动APP时，dyld所做的事情有
-> 装载APP的可执行文件(可执行文件包含代码和动态库依赖信息)，同时会递归加载所有依赖的动态库
+>装载APP的可执行文件(可执行文件包含代码和动态库依赖信息)，同时会递归加载所有依赖的动态库
+> 
+> 
 >
->
->
-> ![img](https:////upload-images.jianshu.io/upload_images/2510972-f58b661d358f3217.png?imageMogr2/auto-orient/strip|imageView2/2/w/1096)
+>![img](iOS知识整理/18.png)
 >
 > 可执行文件
 >
 > 当dyld把可执行文件、动态库都装载完毕后，会通知Runtime进行下一步的处理
-> 启动APP时，runtime所做的事情有
+>启动APP时，runtime所做的事情有
 > 调用map_images进行可执行文件内容的解析和处理
 > 在load_images中调用call_load_methods，调用所有Class和Category的+load方法
 > 进行各种objc结构的初始化（注册Objc类 、初始化类对象等等）
 > 调用C++静态初始化器和**attribute**((constructor))修饰的函数
->
+> 
 > 到此为止，可执行文件和动态库中所有的符号(Class，Protocol，Selector，IMP，…)都已经按格式成功加载到内存中，被runtime 所管理
-> 总结一下
+>总结一下
 > APP的启动由dyld主导，将可执行文件加载到内存，顺便加载所有依赖的动态库
 > 并由runtime负责加载成objc定义的结构
 > 所有初始化工作结束后，dyld就会调用main函数
 > 接下来就是UIApplicationMain函数，AppDelegate的application:didFinishLaunchingWithOptions:方法
->
+> 
 > ##### 3.2 启动优化
 >
 > 按照不同的阶段
-> dyld
+>dyld
 > 减少动态库、合并一些动态库（定期清理不必要的动态库）
 > 减少Objc类、分类的数量、减少Selector数量（定期清理不必要的类、分类）, 装在可执行文件时候有加载类分类的操作.
 > 减少C++虚函数数量
->
+> 
 > runtime
-> 少在+load方法里写逻辑代码可以用+initialize方法和dispatch_once取代
->
+>少在+load方法里写逻辑代码可以用+initialize方法和dispatch_once取代
+> 
 > main
-> 在不影响用户体验的前提下，尽可能将一些操作延迟，不要全部都放在finishLaunching方法中
+>在不影响用户体验的前提下，尽可能将一些操作延迟，不要全部都放在finishLaunching方法中
 > 按需加载
->
->
+> 
+> 
 
 
 
-####四: 包大小优化
+#### 四: 包大小优化
 
 > 安装包（IPA）主要由可执行文件(源代码文件 编译链接生产的)、资源(图片 音视频 stroyboard xib)组成
 > 项目编译完生产app文件,app文件压缩后成IPA文件
@@ -1676,7 +1670,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 >
 >
 >
-> ![img](https:////upload-images.jianshu.io/upload_images/2510972-8ae6fb076ea42585.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200)
+> ![img](iOS知识整理/19.png)
 >
 > 无用资源.png
 >
@@ -1708,7 +1702,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 >
 >
 >
->   ![img](https:////upload-images.jianshu.io/upload_images/2510972-26d91e91bb757553.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200)
+>   ![img](iOS知识整理/20.png)
 >
 >   屏幕快照 2019-03-10 17.37.31.png
 >
@@ -1716,7 +1710,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 >
 >
 >
-> ![img](https:////upload-images.jianshu.io/upload_images/2510972-0bf42aeaa5f8434c.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200)
+> ![img](iOS知识整理/21.png)
 >
 > 掌通代码分析.png
 >
@@ -1726,7 +1720,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 >
 >
 >
-> ![img](https:////upload-images.jianshu.io/upload_images/2510972-2ad4baf4398315d6.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200)
+> ![img](iOS知识整理/22.png)
 >
 > 屏幕快照 2019-03-15 上午10.20.56.png
 >
@@ -1734,7 +1728,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 >
 >
 >
-> ![img](https:////upload-images.jianshu.io/upload_images/2510972-eb3e4076237f92cc.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200)
+> ![img](iOS知识整理/23.png)
 >
 > 
 >
@@ -1814,7 +1808,7 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 
 
 
-####2.AFNetworking
+#### 2.AFNetworking
 
 > ##### AFNetworking 底层原理分析
 >
@@ -1831,7 +1825,9 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 > - UIKit：对于iOS UIKit的扩展库
 >
 
-###十三.编译原理
+
+
+### 十三.编译原理
 
 
 
@@ -1853,9 +1849,9 @@ DNS 中的域名都是用句点来分隔的，比如 www.server.com ，这里的
 
 
 
-###十四.蓝牙,wifi原理
+### 十四.蓝牙,wifi原理
 
-####蓝牙
+#### 蓝牙
 
 **CoreBluetooth中涉及以下对象类：**
 
@@ -1935,9 +1931,7 @@ SSID,每个无线AP都应该有一个标示用于用户识别，SSID就是这个
 
 
 
-##未完待续
-
-
+## 未完待续
 
 
 
